@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Resume - Start Bootstrap Theme</title>
+        <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+
+        <!--google fonts-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+
+        <script src="https://maps.google.com/maps/api/js?key=AIzaSyD9SISJb5lNCSrctJYQ7s3111vQHD6ckbg&callback=Function.prototype" ></script>
+
+        <script>
+            function showLocation(position) {
+                var latitude = position.coords.latitude;
+                var longitude = position.coords.longitude;
+
+                console.log(latitude + " " + longitude);
+
+                var wspolrzedne = new google.maps.LatLng(latitude,longitude);
+                var opcjeMapy = {
+                    zoom: 15,
+                    center: wspolrzedne,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                };
+                var mapa = new
+                google.maps.Map(document.getElementById("mapka"), opcjeMapy);
+            }
+            function errorHandler(error) {
+                var output = document.getElementById("geo");
+                switch (error.code) {
+                    case error.PERMISSION_DENIED:
+                        output.innerHTML = "Użytkownik nie udostępnił danych.";
+                        break;
+                    case error.POSITION_UNAVAILABLE:
+                        output.innerHTML = "Dane lokalizacyjne niedostępne.";
+                        break;
+                    case error.TIMEOUT:
+                        output.innerHTML = "Przekroczono czas żądania.";
+                        break;
+                    case error.UNKNOWN_ERROR:
+                        output.innerHTML = "Wystąpił nieznany błąd.";
+                        break;
+                }
+            }
+            function getLocation() {
+                if (navigator.geolocation) {
+                    var options = {timeout: 60000};
+                    navigator.geolocation.getCurrentPosition(
+                        showLocation,
+                        errorHandler,
+                        options);
+                } else { alert("Twoja przeglądarka nie wspiera geolokalizacji!");}
+            }
+        </script>
+
+    </head>
+    <body id="page-top" onload="getLocation()">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+            <a class="navbar-brand js-scroll-trigger" href="#page-top">
+                <span class="d-block d-lg-none">Blog ogrodniczy</span>
+                <span class="d-none d-lg-block"><img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="images/logo.jpg" alt="..." /></span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav">
+                    
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="index.html">Strona główna</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="galeria.html">Galeria</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="opinie.html">Opinie</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" id="kontakt">Kontakt</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="onas.html">O nas</a></li>
+                </ul>
+            </div>
+        </nav>
+        <!-- Page Content-->
+
+
+        <h1 class="mb-0">
+            <span class="text-primary" id="text-primary-main-page">Trochę informacji o nas</span>
+        </h1><br><br>
+
+
+        <div class="onas-kontener">            
+            <div class="onas-kontent">
+                <div class="onas-tekst">
+                    <p>
+                        Jesteśmy grupą entuzjastów, którzy nieustannie dzielą się swoją miłością do ogrodniczego świata, a zwłaszcza do uprawy i pielęgnacji ogórków. Nasz blog to miejsce, w którym zgromadziliśmy wiedzę, doświadczenie i inspiracje związane z tym zielonym skarbem.
+                        Dzieląc się naszymi poradami i przepisami, staramy się zachęcić innych do rozpoczęcia własnej przygody z ogrodem i hodowlą ogórków. W naszych artykułach znajdziesz praktyczne wskazówki dotyczące wyboru odpowiednich odmian, przygotowania gleby, siewu, pielęgnacji roślin i walki z ewentualnymi szkodnikami.
+                    </p>
+                </div>
+            </div>
+
+            <div class="onas-kontent">
+                <div class="obrazek">
+                    <img class="img-fluid" src="images/galeria/galeria1.jpg" id="obraz1" alt="..." />
+                </div> 
+                <div class="onas-tekst">
+                    <p>
+                        Zapraszamy Was do regularnego odwiedzania naszego bloga, gdzie będziemy dzielić się nowymi artykułami, zdjęciami i wideo. Bądźcie z nami na bieżąco, aby odkrywać tajniki hodowli ogórków, wymieniać się swoimi doświadczeniami i tworzyć silną społeczność ogrodniczą.
+
+                        Razem odkrywajmy radość i satysfakcję, jaką daje hodowla ogórków. Czekamy na Wasze pytania, komentarze i udostępnianie własnych historii. Z nami zacznijcie swoją ogrodniczą przygodę i pozwólcie ogórkom rozkwitać w Waszych własnych ogrodach!
+                    </p>
+                </div>  
+            </div>
+
+            <div class="onas-kontent" style="flex-direction: column;">
+                <div class="onas-tabela-opis">
+                    Dane kontaktowe do nas
+                </div>
+                <table>
+                    <tr>
+                        <td>Adres: </td>
+                        <td>ul. Lipowa</td>
+                    </tr>
+                    <tr>
+                        <td>numer telefonu: </td>
+                        <td>+48 627 345 234</td>
+                    </tr>
+                    <tr>
+                        <td>adres email: </td>
+                        <td>farmersMarket@farmers.com</td>
+                    </tr>
+                </table>
+
+                <div id="mapka">
+                    <!-- tu będzie mapa -->
+                </div>
+            </div>
+        </div>
+
+     
+        <div id="footer">
+            Adrian Sak vel Antoszak
+        </div>
+
+
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>
